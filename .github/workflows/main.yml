@@ -1,6 +1,6 @@
 name: GitHub test plugin docs
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: workflow_dispatch
+on: [workflow_dispatch, pull_request]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -25,5 +25,8 @@ jobs:
         with:
           repository: elastic/logstash-docs
           path: logstash-docs
+      - name: copy plugin doc entry to logstash-docs
+        run: |
+          cp plugin/docs/index.asciidoc "plugins/inputs/$(awk -F': ' '/:plugin:/{print $2}' plugin/docs/index.asciidoc).asciidoc"
       - name: Build docs
         run: ./docs/build_docs --respect_edit_url_overrides --doc logstash/docs/index.asciidoc --resource=logstash-docs/docs/ --chunk 1
