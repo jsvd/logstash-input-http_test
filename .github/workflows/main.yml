@@ -1,0 +1,28 @@
+name: GitHub test plugin docs
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: workflow_dispatch
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out plugin code
+        uses: actions/checkout@v4
+        with:
+          path: plugin
+      - name: Checkout docs repo
+        uses: actions/checkout@v4
+        with:
+          repository: elastic/docs
+          path: docs
+      - name: Checkout logstash repo
+        uses: actions/checkout@v4
+        with:
+          repository: elastic/logstash
+          path: logstash
+      - name: Checkout logstash-docs repo
+        uses: actions/checkout@v4
+        with:
+          repository: elastic/logstash-docs
+          path: logstash-docs
+      - name: Build docs
+        run: ./docs/build_docs --respect_edit_url_overrides --doc logstash/docs/index.asciidoc --resource=logstash-docs/docs/ --chunk 1
