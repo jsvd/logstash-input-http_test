@@ -1,6 +1,10 @@
 name: GitHub test plugin docs
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [workflow_dispatch, pull_request]
+on: 
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'docs/**/*'
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
