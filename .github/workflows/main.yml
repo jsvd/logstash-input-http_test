@@ -5,6 +5,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - run: ls -lha .
       - name: Check out plugin code
         uses: actions/checkout@v4
         with:
