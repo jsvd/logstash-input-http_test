@@ -74,7 +74,7 @@ You can pass in a username, password combination while sending data to this inpu
 You can also setup SSL and send data securely over https, with multiple options such as
 validating the client's certificate.
 
-[id="plugins-{type}s-{plugin}-codec-settings"]
+[id="plugins-{type}s-{plugin}-codec-setings"]
 ==== Codec settings
 This plugin has two configuration options for codecs: `codec` and `additional_codecs`. 
 
