@@ -376,6 +376,14 @@ It must be either a Java keystore (jks) or a PKCS#12 file.
 
 NOTE: You cannot use this setting and <<plugins-{type}s-{plugin}-ssl_certificate>> at the same time.
 
+[id="plugins-{type}s-{plugin}-my_new_setting"]
+===== `my_new_setting`
+
+ * Value type is <<path,path>>
+ * There is no default value for this setting.
+
+new setting that is broken
+
 [id="plugins-{type}s-{plugin}-ssl_keystore_type"]
 ===== `ssl_keystore_type`
 
